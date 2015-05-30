@@ -24,8 +24,10 @@ namespace NetduinoPlusApplication1
 
             SerialPort serial = new SerialPort(SerialPorts.COM1, 9600, Parity.None, 8, StopBits.One);
             serial.Open();
+                Debug.Print("Opened");
             serial.Flush(); //pause la programme avant que la transmission de buffer est finit. et apres netoiye le buffer
             int buffersize = 7;
+                Debug.Print("Flushed");
             byte[] buffer = new byte[buffersize]; //on declare le nouveau variable de type byte et on inistialise le nombre de variable "buffersize" avec lui
 
             while (true)
